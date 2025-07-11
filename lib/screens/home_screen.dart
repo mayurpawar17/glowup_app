@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:glowup_app/pages/fitness_page.dart';
+import 'package:glowup_app/pages/glowup_page.dart';
 
 import '../pages/home_page.dart';
 
@@ -14,8 +16,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _screens = [
     HomePage(),
-    // GlowUpPage(),
-    // FitnessPage(),
+    GlowUpPage(),
+    FitnessPage(),
     // StylePage(),
     // MindPage(),
     // ProgressPage(),
@@ -27,6 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.red,
+        fixedColor: Colors.amber,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {

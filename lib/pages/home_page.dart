@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../poviders/fitness_provider.dart';
 import '../poviders/habit_provider.dart';
 import '../poviders/user_provdier.dart';
 
@@ -80,34 +81,37 @@ Widget _buildQuickActions(BuildContext context) {
         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
       ),
       SizedBox(height: 10),
-      Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          _buildActionCard(
-            Icons.water_drop,
-            'Log Water',
-            Colors.blue,
-            () => _logWater(context),
-          ),
-          _buildActionCard(
-            Icons.fitness_center,
-            'Start Workout',
-            Colors.red,
-            () => Navigator.pushNamed(context, '/fitness'),
-          ),
-          _buildActionCard(
-            Icons.auto_awesome,
-            'Skincare',
-            Colors.purple,
-            () => Navigator.pushNamed(context, '/style'),
-          ),
-          _buildActionCard(
-            Icons.edit,
-            'Journal',
-            Colors.orange,
-            () => Navigator.pushNamed(context, '/mind'),
-          ),
-        ],
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            _buildActionCard(
+              Icons.water_drop,
+              'Log Water',
+              Colors.blue,
+              () => _logWater(context),
+            ),
+            _buildActionCard(
+              Icons.fitness_center,
+              'Start Workout',
+              Colors.red,
+              () => Navigator.pushNamed(context, '/fitness'),
+            ),
+            _buildActionCard(
+              Icons.auto_awesome,
+              'Skincare',
+              Colors.purple,
+              () => Navigator.pushNamed(context, '/style'),
+            ),
+            _buildActionCard(
+              Icons.edit,
+              'Journal',
+              Colors.orange,
+              () => Navigator.pushNamed(context, '/mind'),
+            ),
+          ],
+        ),
       ),
     ],
   );
@@ -217,8 +221,8 @@ Widget _buildTodaysTasks(HabitProvider habitProvider) {
 }
 
 void _logWater(BuildContext context) {
-  // final fitnessProvider = Provider.of<FitnessProvider>(context, listen: false);
-  // fitnessProvider.addWater(1.0);
+  final fitnessProvider = Provider.of<FitnessProvider>(context, listen: false);
+  fitnessProvider.addWater(1.0);
   ScaffoldMessenger.of(
     context,
   ).showSnackBar(SnackBar(content: Text('Water logged! 💧')));
