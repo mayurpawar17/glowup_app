@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:glowup_app/pages/fitness_page.dart';
 import 'package:glowup_app/pages/glowup_page.dart';
+import 'package:glowup_app/pages/mind_page.dart';
+import 'package:glowup_app/pages/profile_page.dart';
+import 'package:glowup_app/pages/progress_page.dart';
+import 'package:glowup_app/pages/style_page.dart';
 
 import '../pages/home_page.dart';
 
@@ -18,10 +22,10 @@ class _HomeScreenState extends State<HomeScreen> {
     HomePage(),
     GlowUpPage(),
     FitnessPage(),
-    // StylePage(),
-    // MindPage(),
-    // ProgressPage(),
-    // ProfilePage(),
+    StylePage(),
+    MindPage(),
+    ProgressPage(),
+    ProfilePage(),
   ];
 
   @override
@@ -38,22 +42,25 @@ class _HomeScreenState extends State<HomeScreen> {
           });
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home',backgroundColor: Colors.red, ),
           BottomNavigationBarItem(
             icon: Icon(Icons.auto_awesome),
             label: 'Glow-Up',
+            backgroundColor: Colors.red, 
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fitness_center),
             label: 'Fitness',
+            backgroundColor: Colors.red, 
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.style), label: 'Style'),
-          BottomNavigationBarItem(icon: Icon(Icons.psychology), label: 'Mind'),
+          BottomNavigationBarItem(icon: Icon(Icons.style), label: 'Style',backgroundColor: Colors.red, ),
+          BottomNavigationBarItem(icon: Icon(Icons.psychology), label: 'Mind',backgroundColor: Colors.red, ),
           BottomNavigationBarItem(
             icon: Icon(Icons.show_chart),
             label: 'Progress',
+            backgroundColor: Colors.red, 
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile',backgroundColor: Colors.red, ),
         ],
       ),
     );
