@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:glowup_app/pages/fitness_page.dart';
+import 'package:glowup_app/pages/glowup_page.dart';
+import 'package:glowup_app/pages/mind_page.dart';
+import 'package:glowup_app/pages/profile_page.dart';
+import 'package:glowup_app/pages/progress_page.dart';
+import 'package:glowup_app/pages/style_page.dart';
 import 'package:glowup_app/poviders/fitness_provider.dart';
 import 'package:glowup_app/poviders/habit_provider.dart';
 import 'package:glowup_app/poviders/mind_provider.dart';
@@ -21,24 +27,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) => UserProvider()),
-      ChangeNotifierProvider(create: (_) => HabitProvider()),
-      ChangeNotifierProvider(create: (_) => FitnessProvider()),
-      ChangeNotifierProvider(create: (_) => StyleProvider()),
-      ChangeNotifierProvider(create: (_) => MindProvider()),
-      ChangeNotifierProvider(create: (_) => ProgressProvider()),
-    ],
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => HabitProvider()),
+        ChangeNotifierProvider(create: (_) => FitnessProvider()),
+        ChangeNotifierProvider(create: (_) => StyleProvider()),
+        ChangeNotifierProvider(create: (_) => MindProvider()),
+        ChangeNotifierProvider(create: (_) => ProgressProvider()),
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Grit & Glow',
         theme: ThemeData(
           primaryColor: Color(0xFF2C3E50),
-          bottomAppBarTheme: BottomAppBarTheme(
-            color: Colors.amber
-          ),
+          bottomAppBarTheme: BottomAppBarTheme(color: Colors.amber),
 
-          // accentColor: Color(0xFFE74C3C),
+          hintColor: Color(0xFFE74C3C),
           // backgroundColor: Color(0xFFF8F9FA),
           textTheme: GoogleFonts.montserratTextTheme(),
         ),
@@ -47,13 +52,14 @@ class MyApp extends StatelessWidget {
           '/splash': (context) => SplashScreen(),
           '/onboarding': (context) => OnboardingScreen(),
           '/home': (context) => HomeScreen(),
-          // '/glow-up': (context) => GlowUpScreen(),
-          // '/fitness': (context) => FitnessScreen(),
-          // '/style': (context) => StyleScreen(),
-          // '/mind': (context) => MindScreen(),
-          // '/progress': (context) => ProgressScreen(),
-          // '/profile': (context) => ProfileScreen(),
+          '/glow-up': (context) => GlowUpPage(),
+          '/fitness': (context) => FitnessPage(),
+          '/style': (context) => StylePage(),
+          '/mind': (context) => MindPage(),
+          '/progress': (context) => ProgressPage(),
+          '/profile': (context) => ProfilePage(),
         },
-      ),);
+      ),
+    );
   }
 }

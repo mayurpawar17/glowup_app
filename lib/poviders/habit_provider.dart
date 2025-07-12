@@ -21,7 +21,7 @@ class Habit {
 class HabitProvider with ChangeNotifier {
   List<Habit> _habits = [];
   int _dailyScore = 0;
-  int _currentStreak = 0;
+  final int _currentStreak = 0;
 
   List<Habit> get habits => _habits;
 

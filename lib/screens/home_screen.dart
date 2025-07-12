@@ -33,8 +33,8 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: _screens[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.red,
-        fixedColor: Colors.amber,
+        // backgroundColor: Colors.red,
+        // fixedColor: Colors.amber,
         currentIndex: _currentIndex,
         onTap: (index) {
           setState(() {
@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.auto_awesome),
             label: 'Glow-Up',
-            backgroundColor: Colors.red, 
+            // backgroundColor: Colors.red, 
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fitness_center),
